@@ -1,10 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { products } from '@/lib/data';
+import { products, Product } from '@/lib/data';
 import { StarIcon } from '@heroicons/react/24/solid';
 import { StarIcon as StarOutlineIcon, HeartIcon, ShoppingCartIcon } from '@heroicons/react/24/outline';
 import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid';
@@ -13,8 +13,9 @@ interface ProductDetailPageProps {
   params: Promise<{ id: string }>;
 }
 
-export default async function ProductDetailPage({ params }: ProductDetailPageProps) {
-  const { id } = await params;
+export default function ProductDetailPage({ params }: ProductDetailPageProps) {
+  const resolvedParams = React.use(params);
+  const { id } = resolvedParams;
   const product = products.find(p => p.id === parseInt(id));
   
   if (!product) {
@@ -24,7 +25,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
   return <ProductDetail product={product} />;
 }
 
-function ProductDetail({ product }: { product: any }) {
+function ProductDetail({ product }: { product: Product }) {
   const [selectedSize, setSelectedSize] = useState('');
   const [selectedColor, setSelectedColor] = useState('');
   const [quantity, setQuantity] = useState(1);
