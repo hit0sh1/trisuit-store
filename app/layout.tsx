@@ -17,6 +17,27 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "TriSuit Store - 高品質トライスーツ専門店",
   description: "プロから初心者まで対応の高品質トライスーツを豊富に取り揃えております。最高のパフォーマンスを実現するトライスーツをお探しください。",
+  openGraph: {
+    title: "TriSuit Store - 高品質トライスーツ専門店",
+    description: "プロから初心者まで対応の高品質トライスーツを豊富に取り揃えております。最高のパフォーマンスを実現するトライスーツをお探しください。",
+    type: "website",
+    locale: "ja_JP",
+    siteName: "TriSuit Store",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "TriSuit Store - 高品質トライスーツ専門店",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TriSuit Store - 高品質トライスーツ専門店",
+    description: "プロから初心者まで対応の高品質トライスーツを豊富に取り揃えております。最高のパフォーマンスを実現するトライスーツをお探しください。",
+    images: ["/opengraph-image.png"],
+  },
 };
 
 export default function RootLayout({
