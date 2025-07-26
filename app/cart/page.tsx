@@ -158,7 +158,7 @@ export default function CartPage() {
                         </div>
                         
                         <div className="text-right">
-                          <div className="flex items-center space-x-2">
+                          <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-2 space-y-1 sm:space-y-0">
                             <span className="text-lg font-bold text-blue-600">
                               ¥{(item.price * item.quantity).toLocaleString()}
                             </span>
